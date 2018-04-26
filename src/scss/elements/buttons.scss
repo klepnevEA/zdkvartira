@@ -1,0 +1,88 @@
+.search {
+    font-size: 20px;
+    color: $col_gray;
+    border: none;
+    background: none;
+    border-radius: 0;
+    cursor: pointer;
+    outline: none;
+
+    @include iPhone_SE {
+      display: none;
+    }
+}
+
+.hamburger {
+    background-color: $col_green;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: $col_white;
+    font-size: 16px;
+    outline: none;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 1px solid $col_green;
+    line-height: 1;
+    text-align: center;
+
+    &:hover{
+        background: none;
+        color: $col_green;
+        transition: .3s all;
+    }
+}
+
+.hits-all {
+    background-color: $col_green;
+    width: 50%;
+    min-width: 274px;
+    text-transform: uppercase;
+    color: $col_white;
+    font-size: 14px;
+    padding: 18px;
+    margin: 10px auto 0;
+    display: block;
+    border: 1px solid $col_green;
+    border-radius: 5px;
+    cursor: pointer;
+    @include font_bold;
+    outline: none;
+
+    &:hover{
+        background: none;
+        color: $col_green;
+        transition: .3s all;
+    }
+
+    &_small {
+        margin-left: 0;
+    }
+}
+
+.reviews-buttons {
+    @extend .reviews-item;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        background: none;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #000;
+        padding: 14px;
+        text-transform: uppercase;
+        margin-top: 15px;
+        cursor: pointer;
+
+        @include iPhone_SE {
+          padding: 12px;
+          font-size: 14px;
+        }
+
+        &:hover {
+            background: $col_black;
+            color: $col_white;
+            transition: .5s all;
+        }
+    }
+}

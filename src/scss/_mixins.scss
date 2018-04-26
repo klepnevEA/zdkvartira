@@ -1,0 +1,32 @@
+@mixin font_reg{
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+}
+@mixin font_bold{
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+}
+
+/*
+ * iPhones screen mixin
+ */
+@mixin iPhone_SE {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin iPhone_6 {
+  @media (min-width: 321px) and (max-width: 375px) {
+    @content;
+  }
+}
+
+%clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+    
+  }
+}

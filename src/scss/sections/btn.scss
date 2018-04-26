@@ -1,0 +1,127 @@
+.btn {
+    text-transform: uppercase;
+    font-size: 26px;
+    border-radius: 10px;
+    background-color: $gray;
+    border: 2px solid #acacac;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px;
+    color: #000;
+    transition: 0.3s;
+    margin-bottom: 5px;
+    &:hover {
+    	background-color: darken($gray, 5%);
+    }
+
+    @media screen and (max-width: 455px){
+   		width: 100%;
+   		margin: 0;
+   		margin-bottom: 10px;
+    }
+    
+    &-block-center {
+    	text-align: center;
+    	margin-bottom: 20px;
+    }
+
+    &_purple {
+    	background-color: $purple;
+    	color: #fff;
+    	
+    	
+    	&:hover {
+    		background-color: darken($purple, 5%);
+    	}
+    }
+
+    &_gray {
+    	background-color: #e6e6e6;
+    	border-color: #e6e6e6;
+    }
+
+    &_text-transform {
+    	text-transform: none;
+    }
+
+    &_transparent {
+    	background-color: transparent;
+    	border-color: transparent;
+    	color: #acacac;
+    	
+    	&:hover {
+    		background-color: transparent;
+    	}
+    	
+    	&_active {
+    		color: $purple;
+    	}
+    }
+
+    &_purple-gradient {
+    	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ca0064+0,8d0042+100 */
+		background: #ca0064; /* Old browsers */
+		background: -moz-linear-gradient(top, #ca0064 0%, #8d0042 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #ca0064 0%,#8d0042 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #ca0064 0%,#8d0042 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ca0064', endColorstr='#8d0042',GradientType=0 ); /* IE6-9 */
+		color: #fff;
+		text-transform: lowercase;
+		padding: 15px;
+		line-height: 1;
+		border: 0px;
+		width: 100%;
+		font-size: 38px;
+		margin-bottom: 45px;
+		
+		span {
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+    }
+
+    &_green {
+    	border-color: $green;
+    	color: $green;
+    	
+    	&:hover {
+    		background-color: transparent;
+    	}
+
+    	&-active {
+    		background-color: $green;
+    		color: #fff;
+    		
+    		&:hover {
+	    		background-color: $green;
+	    	}
+    	}
+    }
+
+    &_more-info {
+    	position: relative;
+    	background-color: #acacac;
+        border-radius: 0px;
+        color: #fff;
+        border: 0px;
+        max-width: 440px;
+        width: 100%;
+        
+        @media screen and (max-width: 455px){
+	        margin: 0px;
+	    }
+        
+        
+        &:hover {
+        	background-color: darken(#acacac, 5%);
+        }
+
+        &__arrow {
+        	position: absolute;
+        	width: 27px;
+        	right: 18px;
+        	top: 50%;
+   	        transform: translate(0, -50%);
+        }
+    }
+}

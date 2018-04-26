@@ -1,0 +1,14 @@
+.table-description {
+	width: 100%;
+	font-size: 27px;
+	margin-bottom: 20px;
+	
+	&__price {
+		font-size: 45px;
+		color: $green;
+	}
+
+	&__bold {
+		font-weight: 700;
+	}
+}

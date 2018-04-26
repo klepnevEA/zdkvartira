@@ -1,0 +1,464 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Миэль</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+      <script src="../chunks/map.js"></script>
+      <script src="../chunks/map-2.js"></script>
+    </head>
+
+    <body>
+      <%- include modules/header.ejs %>
+      <main>
+
+
+        <section class="section section_gray">
+          <div class="container">
+            <div class="breadcrums">
+              <ul class="breadcrums__list">
+                <li class="breadcrums__elem">
+                  <a href="#" class="breadcrums__link">Главная</a>
+                </li>
+                <li class="breadcrums__elem">
+                  <a class="breadcrums__link">Квартиры</a>
+                </li>
+              </ul>
+            </div>
+
+
+            <div class="map" id="map"></div>
+
+            <div class="btn-block-center">
+              <a href="#" class="btn btn_purple">Продажа</a>
+              <a href="#" class="btn">аренда</a>
+            </div>
+
+            <div class="apartment">
+              <div class="apartment__type">
+                <div class="apartment__type-title"></div>
+                <div class="apartment__type-btn-wrap">
+                  <a href="#" class="apartment__type-btn">Комната</a>
+                  <a href="#" class="apartment__type-btn">Студия</a>
+                </div>
+
+              </div>
+              <div class="apartment__rooms">
+                <div class="apartment__rooms-title">Колличество комнат</div>
+                <div class="apartment__rooms-btn-wrap">
+                  <a href="#" class="apartment__rooms-btn">1</a>
+                  <a href="#" class="apartment__rooms-btn">2</a>
+                  <a href="#" class="apartment__rooms-btn">3</a>
+                  <a href="#" class="apartment__rooms-btn">4+</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-row">
+              <div class="input-col">
+                <div class="input-title">Цена, руб.</div>
+                <div class="input-block">
+                  <div class="input-block__text">от</div>
+                  <input class="input-elem" type="text">
+                  <div class="input-clear"><i class="fas fa-times"></i></div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="input-title"></div>
+                <div class="input-block">
+                  <div class="input-block__text">до</div>
+                  <input class="input-elem" type="text">
+                  <div class="input-clear"><i class="fas fa-times"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-block-center">
+              <a href="#" class="btn btn_gray btn_text-transform">Расширенный поиск <i class="fas fa-caret-down"></i></a>
+            </div>
+
+            <div class="input-row">
+              <div class="input-col">
+                <div class="input-title">Общая, м<span>2</span></div>
+                <div class="input-block">
+                  <div class="input-block__text">от</div>
+                  <input class="input-elem" type="text">
+                  <div class="input-clear"><i class="fas fa-times"></i></div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="input-title"></div>
+                <div class="input-block">
+                  <div class="input-block__text">до</div>
+                  <input class="input-elem" type="text">
+                  <div class="input-clear"><i class="fas fa-times"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-col">
+                <div class="input-title">Жилая, м<span>2</span></div>
+                <div class="input-block">
+                  <div class="input-block__text">от</div>
+                  <input class="input-elem" type="text">
+                  <div class="input-clear"><i class="fas fa-times"></i></div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="input-title"></div>
+                <div class="input-block">
+                  <div class="input-block__text">до</div>
+                  <input class="input-elem" type="text">
+                  <div class="input-clear"><i class="fas fa-times"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-col">
+                <div class="input-title">Кухня, м<span>2</span></div>
+                <div class="input-block">
+                  <div class="input-block__text">от</div>
+                  <input class="input-elem" type="text">
+                  <div class="input-clear"><i class="fas fa-times"></i></div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="input-title"></div>
+                <div class="input-block">
+                  <div class="input-block__text">до</div>
+                  <input class="input-elem" type="text">
+                  <div class="input-clear"><i class="fas fa-times"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-col">
+                <div class="input-title">Этаж</div>
+                <div class="input-block">
+                  <div class="input-block__text">от</div>
+                  <input class="input-elem" type="text">
+                  <div class="input-clear"><i class="fas fa-times"></i></div>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="input-title"></div>
+                <div class="input-block">
+                  <div class="input-block__text">до</div>
+                  <input class="input-elem" type="text">
+                  <div class="input-clear"><i class="fas fa-times"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-col">
+                <label class="input-chekbox">
+                  <input type="checkbox">
+                  <span class="input-chekbox__btn"></span>
+                  <span class="input-chekbox__text">Не первый</span>
+                </label>
+              </div>
+              <div class="input-col">
+                <label class="input-chekbox">
+                  <input type="checkbox">
+                  <span class="input-chekbox__btn"></span>
+                  <span class="input-chekbox__text">Не последний</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="select">
+              <div class="select__text">Тип сделки</div>
+              <select class="select__elem">
+                <option>Выбрано вариантов : 2</option>
+                <option>Выбрано вариантов : 1</option>
+                <option>Выбрано вариантов : 3</option>
+              </select>
+            </div>
+
+            <div class="select">
+              <div class="select__text">Город</div>
+              <select class="select__elem">
+                <option>Любой</option>
+                <option>Любой</option>
+                <option>Любой</option>
+              </select>
+            </div>
+
+            <div class="select">
+              <div class="select__text">Санузел</div>
+              <select class="select__elem">
+                <option>Санузел</option>
+                <option>Санузел</option>
+                <option>Санузел</option>
+              </select>
+            </div>
+
+            <div class="btn-block-center">
+              <a href="#" class="btn btn_transparent btn_transparent_active btn_text-transform"><i class="fas fa-list-ul"></i> Списком</a>
+              <a href="#" class="btn btn_transparent btn_text-transform"><i class="fas fa-map-marker-alt"></i> На карте</a>
+            </div>
+
+            <div class="btn-block-center">
+              <a href="#" class="btn btn_purple-gradient"><span>Показать</span><br>106 предложений</a>
+            </div>
+
+            <h4 class="title-h4 title-h4_bold">Квартиры в Железнодорожном</h4>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos inventore, eligendi reiciendis tempore deserunt unde, quidem dolor itaque accusantium id vitae sed asperiores quae quod, officiis vel labore! Magni, reiciendis.</div>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <h4 class="title-h4">Квартира</h4>
+            <div class="picture-main">
+              <div  class="picture-main__img"></div>
+              <div class="picture-main__photo">
+
+                <div class="picture-main__photo-count">2</div>
+              </div>
+            </div>
+
+            <table class="table-description">
+              <tr>
+                <td colspan="2">Московская обл, Подольск г, Садовая ул, 14Д</td>
+              </tr>
+              <tr>
+                <td style="width: 60%" class="table-description__price">1 550 000</td>
+                <td><i class="fas fa-ruble-sign"></i></td>
+              </tr>
+              <tr>
+                <td class="table-description__bold">Тип дома:</td>
+                <td>кирписчный</td>
+              </tr>
+              <tr>
+                <td class="table-description__bold">Сделка:</td>
+                <td>прямая продажа</td>
+              </tr>
+              <tr>
+                <td class="table-description__bold">Балкон/лоджия:</td>
+                <td>балкон</td>
+              </tr>
+              <tr>
+                <td class="table-description__bold">Этаж:</td>
+                <td>13/17</td>
+              </tr>
+              <tr>
+                <td class="table-description__bold">Санузел</td>
+                <td>раздельный</td>
+              </tr>
+            </table>
+
+
+            <div class="btn-block-center">
+              <a href="#" class="btn btn_green btn_green-active">Заявка на осмотр</a>
+              <a href="#" class="btn btn_green">Заявка на ипотеку</a>
+            </div>
+
+            <div class="btn-block-center">
+              <a href="#" class="btn btn_transparent btn_transparent_active btn_text-transform"><i class="fas fa-heart" style="color: #acacac;"></i> В избранрое</a>
+              <a href="#" class="btn btn_transparent btn_transparent_active btn_text-transform"><i class="fas fa-balance-scale" style="color: #acacac;"></i> К сравнению</a>
+            </div>
+
+            <table class="table-info">
+              <tr>
+                <td colspan="2" class="table-info__title">Площадь, м<span>2</span></td>
+
+              </tr>
+              <tr>
+                <td>Общая:</td>
+                <td class="table-info__count">24</td>
+              </tr>
+              <tr>
+                <td>Жилая:</td>
+                <td class="table-info__count">20</td>
+              </tr>
+              <tr>
+                <td>Кухня:</td>
+                <td class="table-info__count">4</td>
+              </tr>
+            </table>
+
+            <div class="btn-block-center">
+              <a href="#" class="btn btn_more-info">Подробнее
+                <svg class="btn_more-info__arrow" aria-hidden="true" data-prefix="fal" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M443.5 162.6l-7.1-7.1c-4.7-4.7-12.3-4.7-17 0L224 351 28.5 155.5c-4.7-4.7-12.3-4.7-17 0l-7.1 7.1c-4.7 4.7-4.7 12.3 0 17l211 211.1c4.7 4.7 12.3 4.7 17 0l211-211.1c4.8-4.7 4.8-12.3.1-17z" class=""></path></svg>
+              </a>
+            </div>
+
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quasi asperiores tempora dignissimos nostrum, ipsa sed quaerat, minima autem, quia voluptatibus at delectus dicta harum doloremque suscipit alias sint saepe provident in quas sequi laudantium, voluptates officiis. Unde dolor inventore autem quod! Sunt reprehenderit voluptatum, consectetur iure pariatur, dignissimos soluta dolorem saepe dolor, nisi quibusdam expedita similique dolorum itaque magnam doloremque eos illum quam a molestias sit enim eius. Nobis, obcaecati. Ad, ducimus! Blanditiis, voluptatem commodi placeat delectus molestias tempore, cum alias. Illo dicta cupiditate aliquam unde, laborum voluptate modi, aut minima maxime ducimus sapiente id consectetur cumque velit alias? Sit velit et dolor eius suscipit, ea ab iusto quae doloribus eos, nulla amet tempore odit porro rerum perferendis beatae, magnam obcaecati perspiciatis mollitia! Unde excepturi natus tenetur vero, minus in. Adipisci tempora deleniti iure velit vel dicta saepe, omnis tenetur nostrum aliquid culpa quia dolorem, doloremque, ratione, sed atque. Iusto similique tempore, qui porro possimus minima voluptatibus harum! Ipsam illum assumenda, sunt nostrum, nesciunt fuga magni impedit illo tenetur perferendis. Delectus, vitae, perferendis. Obcaecati, temporibus modi laboriosam magnam, quod omnis molestias quo eligendi quasi explicabo quisquam nostrum sit laborum, suscipit ratione reprehenderit hic, consequatur velit. Incidunt nemo quo fuga.</div>
+
+
+            <div class="map" id="map-2"></div>
+
+            <div class="personal-information">
+              <div class="personal-information__wrap">
+                <div class="personal-information__photo">
+                  <img src="assets/img/photo.jpg" alt="photo" class="personal-information__img">
+                </div>
+                <div class="personal-information__text">
+                  <div class="personal-information__name">Ершов<br> Андрей Вячеславович</div>
+                  <div class="personal-information__position">Агент по работе с недвижимостью</div>
+                  <div class="personal-information__tel"><span>+7 (495) 505-505-1</span> (Офис)</div>
+                  <div class="personal-information__tel"><span>+7 (916) 205-45-55</span> (Личный)</div>
+
+                </div>
+              </div>
+
+              <table class="personal-information__table">
+                <tr>
+                  <td> <a href="#" class="personal-information__btn"><i class="fas fa-credit-card"></i> Предложить свою цену
+                    <svg aria-hidden="true" data-prefix="fal" data-icon="question-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#acacac" d="M256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28zm7.67-24h-16c-6.627 0-12-5.373-12-12v-.381c0-70.343 77.44-63.619 77.44-107.408 0-20.016-17.761-40.211-57.44-40.211-29.144 0-44.265 9.649-59.211 28.692-3.908 4.98-11.054 5.995-16.248 2.376l-13.134-9.15c-5.625-3.919-6.86-11.771-2.645-17.177C185.658 133.514 210.842 116 255.67 116c52.32 0 97.44 29.751 97.44 80.211 0 67.414-77.44 63.849-77.44 107.408V304c0 6.627-5.373 12-12 12zM256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8z" class=""></path></svg>
+                  </a></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="#" class="personal-information__btn"><i class="fas fa-download"></i> Брошюра от объекте
+                    <svg aria-hidden="true" data-prefix="fal" data-icon="question-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#acacac" d="M256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28zm7.67-24h-16c-6.627 0-12-5.373-12-12v-.381c0-70.343 77.44-63.619 77.44-107.408 0-20.016-17.761-40.211-57.44-40.211-29.144 0-44.265 9.649-59.211 28.692-3.908 4.98-11.054 5.995-16.248 2.376l-13.134-9.15c-5.625-3.919-6.86-11.771-2.645-17.177C185.658 133.514 210.842 116 255.67 116c52.32 0 97.44 29.751 97.44 80.211 0 67.414-77.44 63.849-77.44 107.408V304c0 6.627-5.373 12-12 12zM256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8z" class=""></path></svg>
+                  </a></td>
+                  <td class="personal-information__views">
+                    Просмотров: <span>980</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="btn-block-center">
+              <a href="#" class="btn btn_green btn_green-active">Зарыть</a>
+              
+            </div>
+          </div>
+          </section>
+
+          <section class="section section_gray">
+            <div class="container">
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="container">
+              <h4 class="title-h4">Квартира</h4>
+              <div class="picture-main">
+                <div  class="picture-main__img"></div>
+                <div class="picture-main__photo">
+
+                  <div class="picture-main__photo-count">2</div>
+                </div>
+              </div>
+
+              <table class="table-description">
+                <tr>
+                  <td colspan="2">Московская обл, Подольск г, Садовая ул, 14Д</td>
+                </tr>
+                <tr>
+                  <td style="width: 60%" class="table-description__price">1 550 000</td>
+                  <td><i class="fas fa-ruble-sign"></i></td>
+                </tr>
+                <tr>
+                  <td class="table-description__bold">Тип дома:</td>
+                  <td>кирписчный</td>
+                </tr>
+                <tr>
+                  <td class="table-description__bold">Сделка:</td>
+                  <td>прямая продажа</td>
+                </tr>
+                <tr>
+                  <td class="table-description__bold">Балкон/лоджия:</td>
+                  <td>балкон</td>
+                </tr>
+                <tr>
+                  <td class="table-description__bold">Этаж:</td>
+                  <td>13/17</td>
+                </tr>
+                <tr>
+                  <td class="table-description__bold">Санузел</td>
+                  <td>раздельный</td>
+                </tr>
+              </table>
+
+
+              <div class="btn-block-center">
+                <a href="#" class="btn btn_green btn_green-active">Заявка на осмотр</a>
+                <a href="#" class="btn btn_green">Заявка на ипотеку</a>
+              </div>
+
+              <div class="btn-block-center">
+                <a href="#" class="btn btn_transparent btn_transparent_active btn_text-transform"><i class="fas fa-heart" style="color: #acacac;"></i> В избранрое</a>
+                <a href="#" class="btn btn_transparent btn_transparent_active btn_text-transform"><i class="fas fa-balance-scale" style="color: #acacac;"></i> К сравнению</a>
+              </div>
+
+              <table class="table-info">
+                <tr>
+                  <td colspan="2" class="table-info__title">Площадь, м<span>2</span></td>
+
+                </tr>
+                <tr>
+                  <td>Общая:</td>
+                  <td class="table-info__count">24</td>
+                </tr>
+                <tr>
+                  <td>Жилая:</td>
+                  <td class="table-info__count">20</td>
+                </tr>
+                <tr>
+                  <td>Кухня:</td>
+                  <td class="table-info__count">4</td>
+                </tr>
+              </table>
+
+              <div class="btn-block-center">
+                <a href="#" class="btn btn_more-info">Подробнее
+                  <svg class="btn_more-info__arrow" aria-hidden="true" data-prefix="fal" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M443.5 162.6l-7.1-7.1c-4.7-4.7-12.3-4.7-17 0L224 351 28.5 155.5c-4.7-4.7-12.3-4.7-17 0l-7.1 7.1c-4.7 4.7-4.7 12.3 0 17l211 211.1c4.7 4.7 12.3 4.7 17 0l211-211.1c4.8-4.7 4.8-12.3.1-17z" class=""></path></svg>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section class="section section_gray">
+            <div class="container">
+              <div class="pagination">
+                <ul class="pagination__list">
+                  <li class="pagination__elem pagination__elem_active">
+                    <a href="#" class="pagination__link">1</a>
+                  </li>
+                  <li class="pagination__elem">
+                    <a href="#" class="pagination__link">2</a>
+                  </li>
+                  <li class="pagination__elem">
+                    <a href="#" class="pagination__link">3</a>
+                  </li>
+                  <li class="pagination__elem">
+                    <a href="#" class="pagination__link">...</a>
+                  </li>
+                  <li class="pagination__elem">
+                    <a href="#" class="pagination__link">13</a>
+                  </li>
+                  <li class="pagination__elem">
+                    <a href="#" class="pagination__link">14</a>
+                  </li>
+                  <li class="pagination__elem">
+                    <a href="#" class="pagination__link"><i class="fas fa-angle-double-right"></i></a>
+                  </li>
+                </ul>
+              </div>
+
+              <h4 class="title-h4 title-h4_bold">5 причин приобрести квартиру в Железнодорожном</h4>
+
+              <ul class="text-list">
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sint itaque facilis reiciendis soluta impedit dicta nulla, obcaecati veniam, facere eveniet qui tempora tenetur voluptate tempore deleniti! Sequi tenetur, animi.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sint itaque facilis reiciendis soluta impedit dicta nulla, obcaecati veniam, facere eveniet qui tempora tenetur voluptate tempore deleniti! Sequi tenetur, animi.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sint itaque facilis reiciendis soluta impedit dicta nulla, obcaecati veniam, facere eveniet qui tempora tenetur voluptate tempore deleniti! Sequi tenetur, animi.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sint itaque facilis reiciendis soluta impedit dicta nulla, obcaecati veniam, facere eveniet qui tempora tenetur voluptate tempore deleniti! Sequi tenetur, animi.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sint itaque facilis reiciendis soluta impedit dicta nulla, obcaecati veniam, facere eveniet qui tempora tenetur voluptate tempore deleniti! Sequi tenetur, animi.</li>
+              </ul>
+
+
+            </div>
+          </section>
+
+      </main>
+      <%- include modules/footer.ejs %>
+    </body>
+
+    </html>

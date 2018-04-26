@@ -1,0 +1,18 @@
+body{
+    @include font_reg;
+    color: $col_black;
+    max-width: 1170px;
+    margin: auto;
+}
+.container{
+    width: 100%;
+    max-width: 768px;
+    margin: auto;
+    padding: 0 30px;
+    @media screen and (max-width: 455px){
+        padding: 0 15px;
+    }
+}
+section{
+    padding: 20px 0;
+}

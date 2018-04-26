@@ -1,0 +1,15 @@
+.text {
+    font-size: 21px;
+    margin-bottom: 20px;
+    
+    &-list {
+    	font-size: 21px;
+    	margin-bottom: 20px;
+    	list-style: disc;
+    	
+    	li {
+    		margin-bottom: 20px;
+    		margin-left: 22px;
+    	}
+    }
+}

@@ -1,0 +1,133 @@
+.input {
+
+    &-elem {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: 0px;
+        background-color: transparent;
+        padding: 5px 5px 5px 40px;
+        font-size: 30px;
+        outline: 0px;
+        color: #acacac;
+    }
+    
+
+    &-row {
+        display: flex;
+        margin: 0 -20px;
+        margin-bottom: 40px;
+    }
+
+    &-col {
+        width: 50%;
+        padding: 0 20px;
+        
+    }
+
+    &-title {
+        font-size: 24px;
+        color: #acacac;
+        margin-bottom: 10px;
+        min-height: 30px;
+        
+        span {
+            font-size: 0.7em;
+            position: relative;
+            top: -5px;
+        }
+    }
+
+    &-block {
+        position: relative;
+        border-radius: 5px;
+        background-color: #fff;
+        border: 2px solid #acacac;
+        width: 100%;
+        height: 55px;
+        overflow:hidden;
+        
+        &__text {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translate(0, -50%);
+            color: #acacac;
+            font-size: 21px;
+        }
+    }
+
+    &-clear {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translate(0, -50%);
+        color: #acacac;
+        font-size: 20px;
+        z-index: 100;
+        cursor: pointer;
+    }
+
+    &-chekbox {
+
+        @media screen and (max-width: 455px){
+            display: flex;
+        }
+
+        input {
+            position: absolute;
+            visibility: hidden;
+            
+            &:checked + .input-chekbox__btn:after {
+                opacity: 1;
+            }
+        }
+
+        &__btn {
+            display: inline-block;
+            position: relative;
+            border-radius: 5px;
+            background-color: #fff;
+            border: 2px solid #acacac;
+            width: 55px;
+            height: 55px;
+            overflow:hidden;
+            cursor: pointer; 
+            vertical-align: middle;
+            margin-right: 30px;
+            
+            
+            @media screen and (max-width: 455px){
+                margin-right: 5px;
+                flex: 0 0 auto;
+            }
+            
+            &:after {
+                font-family: 'Font Awesome 5 Free';
+                content: "\f00c";
+                color: #acacac;
+                font-size: 30px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: 0.3s;
+                
+            }
+        }
+
+        &__text {
+            font-size: 24px;
+            vertical-align: middle;
+            
+            @media screen and (max-width: 455px){
+                line-height: 1;
+                padding-top: 5px;
+            }
+        }
+
+    }
+}

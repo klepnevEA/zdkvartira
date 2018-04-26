@@ -1,0 +1,15 @@
+        function app() {
+          ymaps.ready(init);
+
+          function init() {
+              var myMap = new ymaps.Map("map-2", {
+                      center: [55.76, 37.64],
+                      zoom: 10
+                  }, {
+                      searchControlProvider: 'yandex#search'
+                  })
+
+                  myMap.behaviors.disable('scrollZoom');
+          };
+        };
+        document.addEventListener("DOMContentLoaded", app);

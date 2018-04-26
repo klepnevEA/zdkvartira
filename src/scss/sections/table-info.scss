@@ -1,0 +1,28 @@
+.table-info {
+    max-width: 440px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #acacac;
+    font-size: 33px;
+    margin-bottom: 5px;
+    
+    &__title {
+    	color: #555555;
+    	font-size: 27px;
+    }
+
+    &__count {
+    	width: 70%;
+    	font-size: 47px;
+    	font-weight: 700;
+    	text-align: left;
+    }
+    
+    td {
+    	padding: 0px 40px;
+        
+        @media screen and (max-width: 455px){
+            padding: 0px 25px;
+        }
+    }
+}

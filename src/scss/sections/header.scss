@@ -1,0 +1,87 @@
+header {
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 5;
+
+    .container {
+        padding: 0;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-height: 112px;
+
+    .logo {
+        height: 65px;
+        margin-right: 10px;
+
+        @include iPhone_SE {
+          height: 50px;
+        }
+
+        img {
+          max-height: 100%;
+        }
+    }
+
+    a{
+      color: #000;
+      font-size: 19px;
+
+      @include iPhone_SE {
+        font-size: 18px;
+      }
+    }
+
+    .phone {
+        text-align: center;
+        font-size: 19px;
+        @include font_bold;
+
+        @include iPhone_SE {
+          font-size: 18px;
+        }
+
+        span {
+          @include font_reg;
+          display: block;
+          font-size: 14px;
+          margin-top: 1px;
+
+          @include iPhone_SE {
+            font-size: 12px;
+            margin-top: 1px;
+          }
+        }
+    }
+
+    &-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left:0;
+      width: 100%;
+      background-color: $col_white;
+      padding: 15px;
+      z-index: 15;
+
+      li{
+        a{
+          font-size: 16px;
+          color: $col_pink;
+          @include font_bold;
+          padding: 10px 5px;
+          display: block;
+
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+}

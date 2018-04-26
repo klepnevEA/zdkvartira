@@ -1,0 +1,43 @@
+.apartment {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+    &__type-btn-wrap,
+    &__rooms-btn-wrap {
+        border: 2px solid #acacac;
+        display: flex;
+    }
+
+    &__type-title,
+    &__rooms-title {
+        min-height: 30px;
+        font-size: 21px;
+        color: #acacac;
+    }
+
+    &__type-btn,
+    &__rooms-btn {
+        border-right: 2px solid #acacac;
+        padding: 10px 26px;
+        color: #000;
+        transition: 0.3s;
+        font-size: 21px;
+        background-color: #FFF;
+        text-align: center;
+        flex: 1 1 auto;
+        
+        @media screen and (max-width: 455px){
+            padding: 10px;
+        }
+
+        &:hover {
+            background-color: darken($gray, 5%);
+        }
+        
+        
+        &:last-child {
+            border-right: 0px;
+        }
+    }
+}
